@@ -1,0 +1,76 @@
+
+:root {
+	--font-primary:"Outfit";
+}
+
+h1 {
+	font-size: 20px;
+	font-family: var(--font-primary);
+	color: white;
+}
+
+.machine {
+	width: 60vw;
+	height: 200vh;
+	background-color: #DAC9A6;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 20px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 5px;
+}
+
+.sodaposter {
+	width: 70%;
+	rotate: 20deg;
+}
+
+.calcifer {
+padding-top: 50px;
+}
+
+.cupnoddle {
+	width: 90%;
+	padding-left: 40px;
+	padding-top: 20px;
+	rotate: -10deg;
+}
+
+.milk {
+	padding-top: 30px;
+	rotate: 10deg;
+}
+
+.grid-price {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 200px;
+}
+
+h2 {
+	font-size: 15px;
+	font-family: var(--font-primary);
+	color: white;
+}
+
+.button {
+	width: 500px;
+	height: 35px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+	padding: 0;
+}
+
+.button div {
+	width: 100%;
+	height: 100%;
+	background-color: aqua;
+	border-radius: 30px;
+}
