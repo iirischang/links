@@ -4,78 +4,39 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="reset.css" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
+		<script defer src="arena.js"></script>
 
 		<!-- font -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+		<script>
+			(function(d) {
+			  var config = {
+				kitId: 'avy3rpb',
+				scriptTimeout: 3000,
+				async: true
+			  },
+			  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+			})(document);
+		  </script>
 
 	</head>
 		<body>
+			<header>
+				<h1 id="channel-title"></h1>
+				<section id="channel-description"></section>
+				<p><a id="channel-link">See on Are.na</a></p>
+			</header>
 
-	<section class="machine">
-		<div class="glass"></div>
-			<h1>Japanese Food</h1>
-
-		<!-- glass -->
-		<div class="grid-container">
-		
-		<!-- machine-items -->
-		<div class="item">
-			<img class="sodaposter" src="items/昭和の味 純喫茶.jpeg">
-			<h2>¥ 150</h2>
-			<div class="button"></div><div></div>
-		</div>
-
-		<div class="item">
-			<img class="calcifer" src="items/Calcifer.gif">
-			<h2>¥ 200</h2>
-			<div class="button"></div><div></div>
-		</div>
-
-		<div class="item">
-			<img class="cupnoddle" src="items/Cup Noodles Poster.jpeg">
-			<h2>¥ 180</h2>
-			<div class="button"></div><div></div>
-		</div>
-
-		<div class="item">
-			<img class="milk" src="items/Meiji Milk.jpg">
-			<h2>¥ 150</h2>
-			<div class="button"></div><div></div>
-		</div>
-	</div>
-
-		<div class="grid-container">
-		<div class="item">
-			<img class="snack" src="items/Japan’s 7-11 snack.jpg">
-			<h2>¥ 300</h2>
-			<div class="button"></div><div></div>
-		</div>
-
-		<div class="item">
-			<img class="sushi" src="items/Sushi & Sake.png">
-			<h2>¥ 500</h2>
-			<div class="button"></div><div></div>
-		</div>
-
-		<div class="item">
-			<img class="ramen" src="items/Ramen.jpg">
-			<h2>¥ 800</h2>
-			<div class="button"></div><div></div>
-		</div>
-
-		<div class="item">
-			<img class="dango" src="items/Dango & Matcha.png">
-			<h2>¥ 300</h2>
-			<div class="button"></div><div></div>
-		</div>
-
-		</div>
-	<footer>
-		<h3> Designed by Iris Chang, Curated by Mika Arai</h3>
-	</footer>
-	</section>
+			<main>
+				<section>
+					<h2>All blocks</h2>
+					<ul id="channel-blocks"></ul>
+					<p><span id="channel-count"></span>blocks</p>
+				</section>
+			</main>
+			<footer>
+				<h2>Authors</h2>
+				<section id="channel-users"></section>
+			</footer>
 
 		</body>
 </html>

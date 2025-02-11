@@ -1,97 +1,25 @@
-
-:root {
-	--font-primary:"Outfit";
+body {
+	background-color: #CB4042;
+	color: #fff4c5;
 }
 
-h1 {
+#channel-title {
 	font-size: 40px;
-	font-family: var(--font-primary);
-	color: white;
+	font-family: 'tot-shizukasmudgemin-stdn';
 }
 
-.machine {
-	width: 60vw;
-	height: 130vh;
-	background-color: #f10000;
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	margin: auto;
-	padding: 20px;
-	border-radius: 30px;
-}
-
-.machine:hover .glass {
-	background-color: rgba(255, 255, 255, 0);
-	backdrop-filter: blur(0px);
-	opacity: 1;
-}
-
-.glass {
-	width: 60vw;
-	height: 130vh;
-	position: absolute;
-	background-color: rgb(255, 255, 255, 0.1);
-	backdrop-filter: blur(1px);
-	z-index: 10;
-}
-
-.grid-container {
-	padding-top: 30px;
+#channel-blocks {
 	display: grid;
-	grid-template-columns: repeat(4,1fr);
-	gap: 20px;
-	width: 100%;
-	justify-items: center;
-	position: relative;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 1px;
 }
 
-.sodaposter {
-	rotate: 20deg;
-}
-
-.calcifer {
-	padding-bottom: 10px;
-}
-
-.cupnoddle {
-	width: 90%;
-	rotate: -10deg;
-	padding-bottom: 30px;
-}
-
-.milk {
-	rotate: 10deg;
-}
-
-.grid-price {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	gap: 200px;
-}
-
-h2 {
-	font-size: 15px;
-	font-family: var(--font-primary);
-	color: white;
-	align-items: center;
-}
-
-.button {
-	width: 50px;
-	height: 20px;
-	background-color: gold;
-	border-radius: 10px;
-}
-
-.button:hover {
-	background-color: red;
-}
-
-h3 {
-	font-family: var(--font-primary);
-	font-size: 20px;
-	justify-items: end;
-	padding-top: 50px;
-	color: white;
+#channel-blocks img, video, li {
+	display: block;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	overflow: hidden;
 }
