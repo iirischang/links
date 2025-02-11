@@ -3,6 +3,11 @@ body {
 	color: #fff4c5;
 }
 
+h3 {
+	font-size: 20px;
+	font-family: 'Courier New', Courier, monospace;
+}
+
 #channel-title {
 	font-size: 40px;
 	font-family: 'tot-shizukasmudgemin-stdn';
@@ -10,16 +15,38 @@ body {
 
 #channel-blocks {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	gap: 1px;
 }
 
 #channel-blocks img, video, li {
 	display: block;
-	width: 200px;
-	height: 200px;
+	width: 100px;
+	height: 100px;
 	object-fit: cover;
 	aspect-ratio: 1/1;
 	border-radius: 50%;
 	overflow: hidden;
+}
+
+
+/* Media Queries */
+/* Desktop Media Query */
+@media(min-width: 1200px) {
+
+	#channel-blocks {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	#channel-blocks img, video, li {
+		display: block;
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
 }
