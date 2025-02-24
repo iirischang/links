@@ -11,30 +11,26 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
 
-		<script>
-			(function(d) {
-			  var config = {
-				kitId: 'avy3rpb',
-				scriptTimeout: 3000,
-				async: true
-			  },
-			  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-			})(document);
-		  </script>
-
 
 	</head>
 		<body>
-			<header>
-				<h1 id="channel-title"></h1>
-				<section id="channel-description" class="hidden"></section>
-				<p><a id="channel-link">See on Are.na →</a></p>
-			</header>
 		<main>
-			<section class="machine-container">
-				<div class="background-image"></div>
-				<div class="button-grid" id="buttonGrid"></div>
-			</section>
+		<!-- container -->
+			<div class="page-container">
+				<section class="machine-container">
+					<div class="background-image"></div>
+					<div class="button-grid" id="buttonGrid"></div>
+				</section>
+
+				<section class="title-section">
+					<div class="title-stack">
+					<h1 id="channel-title"></h1>
+					<section id="channel-description" class="hidden"></section>
+					<p><a id="channel-link" class="hidden">See on Are.na</a></p>
+					</div>
+					<h1 id="channel-title2">にほんりょうり</h1>
+				</section>
+			</div>
 
 		<!-- modal -->
 			<div class="modal" id="itemModal">
@@ -50,7 +46,6 @@
 		</main>
 
 			<footer>
-				<!-- <h1 id="channel-title2">にほんりょうり</h1> -->
 				<section id="channel-users" class="hidden"></section>
 			</footer>
 

@@ -1,25 +1,51 @@
+@font-face {
+font-family: 'MadouFuto';
+src: url('../fonts/MadouFutoMaruGothic-d9Xo7.ttf')
+}
+
+@font-face {
+	font-family: 'BestTen';
+	src: url('../fonts/BestTen-CRT.otf')
+	}
+
+@font-face {
+	font-family: 'HomeVideo';
+	src: url('../fonts/HomeVideo-BLG6G.ttf')
+	}
+
+@font-face {
+	font-family: 'Matrixtype';
+	src: url('../fonts/MatrixtypeDisplay-9MyE5.ttf')
+	}
+
 body {
-	background-color: #f20d0d;
+	background-color: #171717;
+	overflow: hidden;
+}
+
+.page.container {
+	width: 100%;
+	min-width: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+.machine-container {
+	position: relative;
+	width: 100%;
+	height: 80vh;
+	z-index: 10;
 }
 
 .background-image {
 	top: 0;
 	left: 0;
 	position: absolute;
-	background-image: url('../assets/vending-machine.png');
-	background-size: cover;
+	background-image: url('../assets/vending-machine.svg');
+	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	z-index: 10;
-	width: 100%;
-	height: 100vh;
-}
-
-.machine-container {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	z-index: 100;
 }
 
 .button-grid {
@@ -39,20 +65,12 @@ body {
 .vending-button {
 	z-index: 100;
 	background: #1a1a1a;
-	/* border: 2px solid rgba(255, 255, 255, 0.4); */
 	cursor: pointer;
 	transition: all 0.3 ease;
 	min-height: 7px;
 	min-width: 26px;
 	font-weight: bold;
 	animation: blink 1.5s infinite;
-}
-
-.vending-button:hover {
-	background-color: #ffff00;
-	/* border-color: rgba(255, 255, 255, 0.4); */
-	transform: scale(1.05);
-
 }
 
 
@@ -63,7 +81,6 @@ body {
 	left: 0;
 	width: 70%;
 	height: 70%;
-	/* background-color: rgba(255, 255, 255, 0.8); */
 	z-index: 200;
 }
 
@@ -92,6 +109,7 @@ body {
 	border: none;
 	color: #fff;
 }
+
 
 .modal.active {
 	display: block;
@@ -145,43 +163,34 @@ h3 {
 .vending-button:nth-child(24) { animation-delay: 5s;}
 
 
-#channel-title { 
-	font-size: 70px;
-	font-family: 'Teko';
-	margin-left: 20px;
+.title-section {
+	width: 100%;
+	padding: 0 20px;
+	position: relative;
+	z-index: 20;
+	margin-top: -10vh;
+	box-sizing: border-box;
 }
 
-#channel-title2 { 
-	font-size: 200px;
-	font-family: 'tot-shizukardmin-stdn';
+.title-stack {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0;
+}
+
+#channel-title { 
+	font-size: 70px;
+	font-family: 'MadouFuto';
 	margin-left: 20px;
-	text-align: center;
 }
 
 #channel-link {
 	font-size: 30px;
-	font-family: 'Teko';
+	font-family: 'MadouFuto';
 	text-transform: uppercase;
-	margin-left: 20px;
 }
-
-
-/* #channel-blocks {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 1px;
-} */ 
-
-
-/* #channel-blocks img, video, li {
-	display: block;
-	width: 100px;
-	height: 100px;
-	object-fit: cover;
-	aspect-ratio: 1/1;
-	border-radius: 50%;
-	overflow: hidden;
-} */
 
 
 /* Media Queries */
@@ -192,11 +201,11 @@ h3 {
 		top: 0;
 		left: 0;
 		position: absolute;
-		background-image: url('../assets/vending-machine.png');
-		background-size: cover;
-		background-position: center;
+		background-image: url('../assets/vending-machine.svg');
+		background-size: 40%;
+		background-position: right 5% top -40%;
 		background-repeat: no-repeat;
-		z-index: 10;
+		z-index: 1;
 		width: 100%;
 		height: 100vh;
 	}
@@ -210,13 +219,13 @@ h3 {
 	
 	.button-grid {
 		position: absolute;
-		top: 29.8%;
-		left: 45%;
+		top: 33.7%;
+		left: 70%;
 		display: grid;
 		grid-template-columns: repeat(8, 1fr);
 		grid-template-rows: repeat(3, 1fr);
-		grid-row-gap: 88px;
-		grid-column-gap: 4px;
+		grid-row-gap: 106px;
+		grid-column-gap: 12px;
 		width: 20%;
 		height: 20%;
 		z-index: 100;
@@ -225,7 +234,6 @@ h3 {
 	.vending-button {
 		z-index: 100;
 		background: #1a1a1a;
-		/* border: 2px solid rgba(255, 255, 255, 0.4); */
 		cursor: pointer;
 		transition: all 0.3 ease;
 		min-height: 9px;
@@ -234,14 +242,6 @@ h3 {
 		animation: blink 1.5s infinite;
 	}
 	
-	.vending-button:hover {
-		background-color: #ffff00;
-		/* border-color: rgba(255, 255, 255, 0.4); */
-		transform: scale(1.05);
-	
-	}
-	
-	
 	.modal {
 		display: none;
 		position: fixed;
@@ -249,7 +249,6 @@ h3 {
 		left: 0;
 		width: 70%;
 		height: 70%;
-		/* background-color: rgba(255, 255, 255, 0.8); */
 		z-index: 200;
 	}
 	
@@ -293,23 +292,42 @@ h3 {
 	}
 
 	#channel-title { 
-		font-size: 70px;
-		font-family: 'Teko';
+		font-size: 180px;
+		font-family: 'HomeVideo';
 		margin-left: 20px;
+		color: #fff;
+		word-break: break-word;
+		overflow-wrap: break-word;
+		text-transform: uppercase;
+		-webkit-text-stroke: 2px #1A1A1A;
 	}
-	
+
 	#channel-title2 { 
-		font-size: 200px;
-		font-family: 'tot-shizukardmin-stdn';
+		font-size: 90px;
+		font-family: 'BestTen';
 		margin-left: 20px;
-		text-align: center;
+		align-items: end;
+		color: #fff;
+		word-break: break-word;
+		overflow-wrap: break-word;
+		text-transform: uppercase;
+		-webkit-text-stroke: 0.5px #1A1A1A;
 	}
 	
 	#channel-link {
 		font-size: 30px;
-		font-family: 'Teko';
+		font-family: 'MadouFuto';
 		text-transform: uppercase;
-		margin-left: 20px;
+		text-align: left;
+	}
+
+	.title-section {
+		margin-top: 40;
+		position: relative;
+		top: 10%;
+		left: 50%;
+		transform: translate(-53%, -120%);
+		z-index: 2;
 	}
 }
 
