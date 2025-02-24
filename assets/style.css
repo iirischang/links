@@ -34,7 +34,7 @@ body {
 .machine-container {
 	position: relative;
 	width: 100%;
-	height: 90vh;
+	height: 80vh;
 	z-index: 10;
 }
 
