@@ -155,7 +155,7 @@
 			buttonGrid.appendChild(emptyButton);
 		}
 
-	adjustButtonPositions();
+	// adjustButtonPositions();
 
 	}
 
@@ -337,37 +337,37 @@
 		renderUser(data.user, channelUsers)
 	})
 
-// control the vending machine button postion
-	function adjustButtonPositions() {
-		const buttonGrid = document.getElementById('buttonGrid');
-		const windowWidth = window.innerWidth;
+// // control the vending machine button postion
+// 	function adjustButtonPositions() {
+// 		const buttonGrid = document.getElementById('buttonGrid');
+// 		const windowWidth = window.innerWidth;
 
-		if (windowWidth < 768) {
-			// mobile
-			buttonGrid.style.top = '30%';
-			buttonGrid.style.left = '16%';
-			buttonGrid.style.width = '20%';
-			buttonGrid.style.rowGap = '350%';
-			buttonGrid.style.columnGap = '6%';
-		} else if (windowWidth >= 768 && windowWidth < 1200) {
-			// tablet
-			buttonGrid.style.top = '34.5%';
-			buttonGrid.style.left = '30%';
-			buttonGrid.style.width = '20%';
-		} else {
-			// desktop
-			buttonGrid.style.top = '28.5%';
-			buttonGrid.style.left = '58.5%';
-			buttonGrid.style.width = '8%';
-			buttonGrid.style.rowGap = '355%';
-			buttonGrid.style.columnGap = '6%';
-		}
-	}
+// 		if (windowWidth < 768) {
+// 			// mobile
+// 			buttonGrid.style.top = '30%';
+// 			buttonGrid.style.left = '16%';
+// 			buttonGrid.style.width = '20%';
+// 			buttonGrid.style.rowGap = '350%';
+// 			buttonGrid.style.columnGap = '6%';
+// 		} else if (windowWidth >= 768 && windowWidth < 1200) {
+// 			// tablet
+// 			buttonGrid.style.top = '34.5%';
+// 			buttonGrid.style.left = '30%';
+// 			buttonGrid.style.width = '20%';
+// 		} else {
+// 			// desktop
+// 			buttonGrid.style.top = '28.5%';
+// 			buttonGrid.style.left = '58.5%';
+// 			buttonGrid.style.width = '8%';
+// 			buttonGrid.style.rowGap = '355%';
+// 			buttonGrid.style.columnGap = '6%';
+// 		}
+// 	}
 
-	document.addEventListener('DOMContentLoaded', function() {
-		adjustButtonPositions();
-	});
+// 	document.addEventListener('DOMContentLoaded', function() {
+// 		adjustButtonPositions();
+// 	});
 
-	window.addEventListener('resize', function(){
-		adjustButtonPositions();
-	})
+// 	window.addEventListener('resize', function(){
+// 		adjustButtonPositions();
+// 	})
