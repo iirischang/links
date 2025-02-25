@@ -38,7 +38,6 @@ body {
 	height: 0;
 	z-index: 10;
 	padding-bottom: 100%;
-	/* overflow: hidden; */
 }
 
 .button-position-container {
@@ -55,7 +54,6 @@ body {
 	left: 0;
 	position: absolute;
 	background-image: url('../assets/vending-machine.svg');
-	/* background-size:cover; */
 	background-position: center;
 	background-repeat: no-repeat;
 	width: 100%;
@@ -65,17 +63,9 @@ body {
 
 .button-grid {
 	position: absolute;
-	top: 34.8%;
-	left: 21%;
-	width: 20%;
 	display: grid;
-	grid-template-columns: repeat(8, 1fr);
+	grid-template-columns: repeat(11, 1fr);
 	grid-template-rows: repeat(3, 1fr);
-	/* grid-row-gap: 62.5px;
-	grid-column-gap: 4px; */
-	gap: 10%;
-	/* width: 20%;
-	height: 20%; */
 	z-index: 100;
 }
 
@@ -84,8 +74,8 @@ body {
 	background: #1a1a1a;
 	cursor: pointer;
 	transition: all 0.3 ease;
-	min-height: 7px;
-	min-width: 26px;
+	height: 5px;
+	width: 14.5px;
 	font-weight: bold;
 	animation: blink 1.5s infinite;
 }
@@ -208,8 +198,9 @@ h3 {
 	padding: 0 20px;
 	position: relative;
 	z-index: 20;
-	margin-top: -10vh;
+	margin-top: 20px;
 	box-sizing: border-box;
+	text-align: center;
 }
 
 .title-stack {
@@ -221,10 +212,12 @@ h3 {
 }
 
 #channel-title { 
-	font-size: 50px;
+	font-size: 10vw;
 	font-family: 'MadouFuto';
 	text-transform: uppercase;
-	margin-top: 150px;
+	max-width: 100%;
+	margin: 0 auto;
+	/* margin-top: 150px; */
 	/* margin-left: 20px; */
 	color: #fff;
 }
@@ -234,6 +227,8 @@ h3 {
 	font-family: 'BestTen';
 	color: #fff;
 	text-align: center;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 #channel-link {
@@ -278,8 +273,8 @@ h3 {
 		background: #1a1a1a;
 		cursor: pointer;
 		transition: all 0.3 ease;
-		min-height: 9px;
-		min-width: 40px;
+		min-height: 10px;
+		min-width: 32px;
 		font-weight: bold;
 		animation: blink 1.5s infinite;
 	}
@@ -374,18 +369,19 @@ h3 {
 	}
 
 	#channel-title { 
-		font-size: 180px;
+		font-size: 7vw;
 		font-family: 'HomeVideo';
-		margin-left: 20px;
+		margin-left: 10px;
 		color: #fff;
 		word-break: break-word;
 		overflow-wrap: break-word;
 		text-transform: uppercase;
 		-webkit-text-stroke: 2px #1A1A1A;
+		text-align: left;
 	}
 
 	#channel-title2 { 
-		font-size: 90px;
+		font-size: 3vw;
 		font-family: 'BestTen';
 		margin-left: 20px;
 		align-items: end;
@@ -394,6 +390,7 @@ h3 {
 		overflow-wrap: break-word;
 		text-transform: uppercase;
 		-webkit-text-stroke: 0.5px #1A1A1A;
+		text-align: left;
 	}
 	
 	#channel-link {
@@ -404,12 +401,11 @@ h3 {
 	}
 
 	.title-section {
-		margin-top: 40;
+		margin-top: -40vh;
 		position: relative;
-		top: 10%;
-		left: 50%;
-		transform: translate(-53%, -120%);
+		text-align: left;
 		z-index: 2;
+		width: 50%;
 	}
 }
 

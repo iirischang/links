@@ -37,7 +37,7 @@
 				return;
 			}
 
-			if (buttonCount >= 24){
+			if (buttonCount >= 33){
 				return;
 			}
 
@@ -161,12 +161,16 @@
 		// Linked video!
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
+			const description = block.description_html || block.description || '';
+			const hasDescription = description.trim().length > 0;
 			content =
 				`
 					<h3>${ block.title || 'Video'}</h3>
 					<p><em>Linked Video</em></p>
 					${ block.embed.html }
-					${block.description_html || ''}
+					${hasDescription ?
+						`<div class="block-description">${description}</div>`:
+						'<div class="no-description">no video description</div>'}
 				`;
 			// channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
@@ -223,4 +227,39 @@
 		let channelUsers = document.querySelector('#channel-users') // Show them together
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
+	})
+
+// control the vending machine button postion
+	function adjustButtonPositions() {
+		const buttonGrid = document.getElementById('buttonGrid');
+		const windowWidth = window.innerWidth;
+
+		if (windowWidth < 768) {
+			// mobile
+			buttonGrid.style.top = '30%';
+			buttonGrid.style.left = '16%';
+			buttonGrid.style.width = '20%';
+			buttonGrid.style.rowGap = '350%';
+			buttonGrid.style.columnGap = '6%';
+		} else if (windowWidth >= 768 && windowWidth < 1200) {
+			// tablet
+			buttonGrid.style.top = '34.5%';
+			buttonGrid.style.left = '30%';
+			buttonGrid.style.width = '20%';
+		} else {
+			// desktop
+			buttonGrid.style.top = '28.5%';
+			buttonGrid.style.left = '58.5%';
+			buttonGrid.style.width = '8%';
+			buttonGrid.style.rowGap = '355%';
+			buttonGrid.style.columnGap = '6%';
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', function() {
+		adjustButtonPositions();
+	});
+
+	window.addEventListener('resize', function(){
+		adjustButtonPositions();
 	})
