@@ -20,7 +20,8 @@ src: url('../fonts/MadouFutoMaruGothic-d9Xo7.ttf')
 
 body {
 	background-color: #171717;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .page.container {
@@ -223,11 +224,15 @@ h3 {
 /* Desktop Media Query */
 @media(min-width: 1200px) {
 
+	body {
+		overflow: hidden;
+	}
+
 	.background-image {
 		position: absolute;
 		background-image: url('../assets/vending-machine.svg');
 		background-size: 40%;
-		background-position: right 5% top -40%;
+		background-position: right 5% top -20%;
 		background-repeat: no-repeat;
 		height: 100vh;
 	}
