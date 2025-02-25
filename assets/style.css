@@ -25,7 +25,7 @@ body {
 
 .page.container {
 	width: 100%;
-	min-width: 100vh;
+	min-width: 100%;
 	display: flex;
 	flex-direction: column;
 	overflow-x: hidden;
@@ -34,31 +34,47 @@ body {
 .machine-container {
 	position: relative;
 	width: 100%;
-	height: 80vh;
+	height: 0;
+	z-index: 10;
+	padding-bottom: 100%;
+	/* overflow: hidden; */
+}
+
+.button-position-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	z-index: 10;
 }
 
 .background-image {
-	top: 0;
+	top: 50;
 	left: 0;
 	position: absolute;
 	background-image: url('../assets/vending-machine.svg');
-	background-size: contain;
+	/* background-size:cover; */
 	background-position: center;
 	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
 }
 
 .button-grid {
 	position: absolute;
 	top: 34.8%;
 	left: 21%;
+	width: 20%;
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
 	grid-template-rows: repeat(3, 1fr);
-	grid-row-gap: 62.5px;
-	grid-column-gap: 4px;
-	width: 20%;
-	height: 20%;
+	/* grid-row-gap: 62.5px;
+	grid-column-gap: 4px; */
+	gap: 10%;
+	/* width: 20%;
+	height: 20%; */
 	z-index: 100;
 }
 
@@ -79,8 +95,8 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 70%;
-	height: 70%;
+	width: 100%;
+	height: 100%;
 	z-index: 200;
 }
 
@@ -181,9 +197,19 @@ h3 {
 }
 
 #channel-title { 
-	font-size: 70px;
+	font-size: 50px;
 	font-family: 'MadouFuto';
-	margin-left: 20px;
+	text-transform: uppercase;
+	margin-top: 150px;
+	/* margin-left: 20px; */
+	color: #fff;
+}
+
+#channel-title2 {
+	font-size: 43px;
+	font-family: 'BestTen';
+	color: #fff;
+	text-align: center;
 }
 
 #channel-link {
@@ -198,37 +224,25 @@ h3 {
 @media(min-width: 1200px) {
 
 	.background-image {
-		top: 0;
-		left: 0;
 		position: absolute;
 		background-image: url('../assets/vending-machine.svg');
 		background-size: 40%;
 		background-position: right 5% top -40%;
 		background-repeat: no-repeat;
-		z-index: 1;
-		width: 100%;
 		height: 100vh;
 	}
 	
 	.machine-container {
-		position: relative;
-		width: 100%;
 		height: 100vh;
-		z-index: 100;
+		padding-bottom: 0;
 	}
 	
 	.button-grid {
-		position: absolute;
 		top: 33.7%;
 		left: 70%;
-		display: grid;
-		grid-template-columns: repeat(8, 1fr);
-		grid-template-rows: repeat(3, 1fr);
-		grid-row-gap: 106px;
-		grid-column-gap: 12px;
+		grid-row-gap: 8%;
+		grid-column-gap: 2%;
 		width: 20%;
-		height: 20%;
-		z-index: 100;
 	}
 	
 	.vending-button {

@@ -27,7 +27,7 @@
 
 	let createButtonGrid = (blocks) => {
 		const buttonGrid = document.getElementById('buttonGrid');
-		buttonGrid.style.transform = 'translate(-50%, -50%)';
+		// buttonGrid.style.transform = 'translate(-50%, -50%)';
 
 		let buttonCount = 0;
 
