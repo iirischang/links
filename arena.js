@@ -27,28 +27,136 @@
 
 	let createButtonGrid = (blocks) => {
 		const buttonGrid = document.getElementById('buttonGrid');
+		buttonGrid.innerHTML = '';
 		// buttonGrid.style.transform = 'translate(-50%, -50%)';
 
-		let buttonCount = 0;
+		// let buttonCount = 0;
+		let imageBlocks = [];
+		let videoBlocks = [];
+		let audioBlocks = [];
+		let linkBlocks = [];
+		let mapBlocks = [];
 
-	// Hide some assets
-		blocks.forEach((block, index) => {
+
+		blocks.forEach((block) => {
 			if (block.title && block.title.includes('Japanese TV commercial')) {
 				return;
 			}
 
-			if (buttonCount >= 33){
-				return;
+			if (block.class == 'Image') {
+				imageBlocks.push(block);
 			}
+			else if ((block.class == 'Media' && block.embed.type.includes('video')) ||
+					(block.class == 'Attachment' && block.attachment.content_type.includes('video'))) {
+				videoBlocks.push(block);
+			}
+			else if (block.class == 'Attachment' && block.attachment.content_type.includes('audio')) {
+				audioBlocks.push(block);
+			}
+			else if (block.class == 'Link') {
+				if (block.source && (block.source.url.includes('maps.google') ||
+					block.source.url.includes('google.com/maps') ||
+					block.title && block.title.toLowerCase().includes('map'))) {
+					mapBlocks.push(block);
+			} else {
+				linkBlocks.push(block);
+			}
+			}
+		});
 
+		const maxPerRow = 11;
+		imageBlocks = imageBlocks.slice(0, maxPerRow);
+
+		let secondRowBlocks = [];
+		if (videoBlocks.length < 3) {
+			secondRowBlocks = [...videoBlocks];
+			const remainingSpace = maxPerRow - secondRowBlocks.length;
+			const audioToAdd = Math.min(remainingSpace, audioBlocks.length);
+			if (audioToAdd > 0) {
+				secondRowBlocks = secondRowBlocks.concat(audioBlocks.slice(0, audioToAdd));
+				audioBlocks = audioBlocks.slice(audioToAdd);
+			}
+			const stillRemaining = maxPerRow - secondRowBlocks.length;
+			if (stillRemaining > 0 && mapBlocks.length > 0) {
+				secondRowBlocks = secondRowBlocks.concat(mapBlocks.slice(0, stillRemaining));
+				mapBlocks = mapBlocks.slice(stillRemaining);
+			}
+		} else {
+			secondRowBlocks = videoBlocks.slice(0, maxPerRow);
+		}
+
+		let thirdRowBlocks = [...audioBlocks, ...linkBlocks, ...mapBlocks].slice(0, maxPerRow);
+
+		imageBlocks.forEach((block) => {
 			const button = document.createElement('button');
-			button.className = 'vending-button';
+			button.className = 'vending-button image-button';
 			button.innerHTML = "";
 			button.addEventListener('click', () => showModal(block));
 			buttonGrid.appendChild(button);
-
-			buttonCount++;
 		});
+
+		for (let i = imageBlocks.length; i < maxPerRow; i++) {
+			const emptyButton = document.createElement('button');
+			emptyButton.className = 'vending-button empty-button';
+			emptyButton.style.animationDuration = '0s';
+			emptyButton.style.opacity = '0.3';
+			buttonGrid.appendChild(emptyButton);
+		}
+
+		secondRowBlocks.forEach((block) => {
+			const button = document.createElement('button');
+			
+			if ((block.class == 'Media' && block.embed.type.includes('video')) ||
+				(block.class == 'Attachment' && block.attachment.content_type.includes('video'))) {
+				button.className = 'vending-button video-button';
+			} else if (block.class == 'Attachment' && block.attachment.content_type.includes('audio')) {
+			button.className = 'vending-button audio-button';
+			} else if (block.class == 'Link' && block.source &&
+					(block.source.url.includes('maps.google') ||
+					block.source.url.includes('google.com/maps') ||
+					(block.title && block.title.toLowerCase().includes('map')))) {
+			button.className = 'vending-button map-button';	
+			} else {
+			button.className = 'vending-button link-button';
+			}
+			button.innerHTML = "";
+			button.addEventListener('click', () => showModal(block));
+			buttonGrid.appendChild(button);
+		});
+
+		for (let i = secondRowBlocks.length; i < maxPerRow; i++) {
+			const emptyButton = document.createElement('button');
+			emptyButton.className = 'vending-button empty-button';
+			emptyButton.style.animationDuration = '0s';
+			emptyButton.style.opacity = '0.3';
+			buttonGrid.appendChild(emptyButton);
+		}
+
+		thirdRowBlocks.forEach((block) => {
+			const button = document.createElement('button');
+
+			if(block.class == 'Attachment' && block.attachment.content_type.includes('audio')){
+				button.className = 'vending-button audio-button';
+			} else if (mapBlocks.includes(block)) {
+				button.className = 'vending-button map-button';
+			} else {
+				button.className = 'vending-button link-button';
+			}
+			button.innerHTML = "";
+			button.addEventListener('click', () => showModal(block));
+			buttonGrid.appendChild(button);
+		});
+
+		for (let i = thirdRowBlocks.length; i < maxPerRow; i++) {
+			const emptyButton = document.createElement('button');
+			emptyButton.className = 'vending-button empty-button';
+			emptyButton.style.animationDuration = '0s';
+			emptyButton.style.opacity = '0.3';
+			buttonGrid.appendChild(emptyButton);
+		}
+
+	adjustButtonPositions();
+
 	}
 
 	let showModal = (block) => {
@@ -144,7 +252,7 @@
 				`
 					<h3>${ block.title || 'Audio'}</h3>
 					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }" style="max-width: 100%"></audio>
+					<audio controls src="${ block.attachment.url }" style="width: 100%; height: 50px"></audio>
 					${block.description_html || ''}
 				`
 			// channelBlocks.insertAdjacentHTML('beforeend', audioItem)
