@@ -224,8 +224,3 @@
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
 	})
-
-
-
-
-
