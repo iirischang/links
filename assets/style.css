@@ -12,6 +12,11 @@
 	--heading-font: 'Teko';
 }
 
+::selection {
+	background-color: var(--red-color); 
+	color: var(--background-color);
+}
+
 /* typefaces */
 @font-face {
 font-family: 'MadouFuto';
