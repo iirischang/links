@@ -24,6 +24,15 @@ body {
 	overflow-y: auto;
 }
 
+h2 {
+	color: #fff;
+	margin-top: 20px;
+	margin-bottom: -10px;
+	font-family: 'MadouFuto';
+	text-transform: uppercase;
+	text-align: center;
+}
+
 .page-container {
 	width: 100%;
 	min-width: 100%;
@@ -341,6 +350,10 @@ h3 {
 		height: 100vh;
 	} */
 	
+	h2 {
+		display: none;
+	}
+
 	.page-container {
 		display: grid;
 		grid-template-columns: 55% 45%;
