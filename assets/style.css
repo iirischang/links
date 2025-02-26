@@ -83,7 +83,6 @@ body {
 .vending-button {
 	z-index: 100;
 	background: #1a1a1a;
-	cursor: pointer;
 	transition: all 0.3 ease;
 	height: 7px;
 	width: 18px;
@@ -133,7 +132,6 @@ body {
 	top: 10px;
 	right: 10px;
 	font-size: 24px;
-	cursor: pointer;
 	background: none;
 	border: none;
 	color: #fff;
@@ -372,6 +370,11 @@ h3 {
 	.vending-button {
 		min-height: 10px;
 		min-width: 29px;
+		z-index: 100;
+	}
+
+	.vending-button:hover {
+		cursor: url('../assets/cursor.cur'), pointer;
 	}
 	
 	.modal {
@@ -419,7 +422,6 @@ h3 {
 	
 	.close-button {
 		font-size: 24px;
-		cursor: pointer;
 		background: none;
 		border: none;
 		color: #fff;
