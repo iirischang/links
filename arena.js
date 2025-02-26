@@ -348,6 +348,20 @@
 		buttonContainer.style.gap = '10px';
 		buttonContainer.style.zIndex = '1000';
 
+		function adjustButtonPositions() {
+			if (window.innerWidth <= 768) {
+				buttonContainer.style.bottom = '15px'
+				buttonContainer.style.position = 'fixed'
+				buttonContainer.style.left = '40px'
+			} else {
+				buttonContainer.style.bottom = '20px'
+			}
+		}
+
+		adjustButtonPositions();
+
+		window.addEventListener('resize', adjustButtonPositions);
+
 		// lunch-orange
 		const lunchButton = document.createElement('button');
 		lunchButton.textContent = 'Lunch';
