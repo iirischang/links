@@ -360,16 +360,16 @@ h3 {
 	}
 	
 	.button-grid {
-		top: 16.3%;
-		left: 63%;
+		top: 16.4%;
+		left: 62.5%;
 		width: 20%;
-		row-gap: 343%;
-		column-gap: 3%;
+		row-gap: 345%;
+		column-gap: 2.5%;
 	}
 	
 	.vending-button {
 		min-height: 10px;
-		min-width: 29px;
+		min-width: 31px;
 		z-index: 100;
 	}
 
@@ -511,4 +511,112 @@ h3 {
 	}
 
 }
+
+/* vending machine buttons */
+
+@media (max-width: 375px) {
+	.button-grid {
+		top: 16.5%;
+		left: 4%;
+		width: 20%;
+		row-gap: 270%;
+		column-gap: 6%;
+	}
+
+	.vending-button {
+		height: 7px;
+		width: 18px;
+	}
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+	.button-grid {
+		top: 16.5%;
+		left: 4%;
+		width: 20%;
+		row-gap: 310%;
+		column-gap: 6%;
+	}
+
+	.vending-button {
+		height: 7px;
+		width: 20px;
+	}
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+	.button-grid {
+		top: 16.5%;
+		left: 4%;
+		width: 20%;
+		row-gap: 330%;
+		column-gap: 6%;
+	}
+
+	.vending-button {
+		height: 12px;
+		width: 36.5px;
+	}
+}
+ 
+@media (min-width: 769px) and (max-width: 1024px) {
+	.button-grid {
+		top: 16.5%;
+		left: 4%;
+		width: 20%;
+		row-gap: 330%;
+		column-gap: 6%;
+	}
+
+	.vending-button {
+		height: 16px;
+		width: 49px;
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1199px) {
+	.button-grid {
+		top: 16.5%;
+		left: 4%;
+		width: 20%;
+		row-gap: 330%;
+		column-gap: 6%;
+	}
+
+	.vending-button {
+		height: 16px;
+		width: 49px;
+	}
+}
+
+/* @media (min-width: 1200px) and (max-width: 1366px) {
+	.button-grid {
+		top: 16.5%;
+		left: 56.5%;
+		width: 20%;
+		row-gap: 350%;
+		column-gap: 3%;
+	}
+
+	.vending-button {
+		height: 10px;
+		width: 32px;
+	} */
+}
+
+@media (min-width: 1367px) and (max-width: 1600px) {
+	.button-grid {
+		top: 16.5%;
+		left: 58.5%;
+		width: 20%;
+		row-gap: 300%;
+		column-gap: 3%;
+	}
+
+	.vending-button {
+		height: 13px;
+		width: 35px;
+	}
+}
+
 
