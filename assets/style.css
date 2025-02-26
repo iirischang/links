@@ -1,3 +1,18 @@
+:root {
+	/* color */
+	--background-color: #232323;
+	--text-color: #fff;
+	--red-color: #ff0000;
+	--modal-background: rgb(0, 0, 0, 0.9);
+
+	/* fonts */
+	--primary-font: 'MadouFuto';
+	--secondary-font: 'BestTen';
+	--title-font: 'HomeVideo';
+	--heading-font: 'Teko';
+}
+
+/* typefaces */
 @font-face {
 font-family: 'MadouFuto';
 src: url('../fonts/MadouFutoMaruGothic-d9Xo7.ttf')
@@ -19,26 +34,91 @@ src: url('../fonts/MadouFutoMaruGothic-d9Xo7.ttf')
 	}
 
 body {
-	background-color: #232323;
+	background-color: var(--background-color);
 	overflow-x: hidden;
 	overflow-y: auto;
 }
 
 h2 {
-	color: #fff;
+	color: var(--text-color);
 	margin-top: 20px;
 	margin-bottom: -10px;
-	font-family: 'MadouFuto';
+	font-family: var(--primary-font);
 	text-transform: uppercase;
 	text-align: center;
 }
 
+h3 {
+	font-size: 30px;
+	font-family: var(--heading-font);
+}
+
+.hidden {
+	display: none;
+}
+
+/* container  */
 .page-container {
 	width: 100%;
 	min-width: 100%;
 	display: flex;
 	flex-direction: column;
 	overflow-x: hidden;
+}
+
+.title-section {
+	width: 100%;
+	padding: 0 20px;
+	position: relative;
+	z-index: 20;
+	margin-top: 45px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.title-stack {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0;
+}
+
+#channel-title { 
+	font-size: 45px;
+	font-family: var(--primary-font);
+	text-transform: uppercase;
+	max-width: 100%;
+	margin: 0 auto;
+	color: var(--text-color);
+}
+
+#channel-title2 {
+	font-size: 38px;
+	font-family: var(--secondary-font);
+	color: var(--text-color);
+	text-align: center;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+#channel-title3 {
+	font-size: 20px;
+	font-family: var(--secondary-font);
+	color: var(--text-color);
+	text-align: right;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-right: 24px;
+	margin-bottom: 30px;
+}
+
+#channel-link {
+	font-size: 30px;
+	font-family: var(--primary-font);
+	text-transform: uppercase;
 }
 
 .machine-container {
@@ -52,7 +132,6 @@ h2 {
 	background-size: contain;
 	aspect-ratio: 0.76/1;
 	z-index: 10;
-	/* padding-bottom: 100%; */
 }
 
 .button-position-container {
@@ -63,18 +142,6 @@ h2 {
 	height: 100%;
 	z-index: 10;
 }
-
-/* .background-image {
-	top: 50;
-	left: 0;
-	position: absolute;
-	background-image: url('../assets/vending-machine.svg');
-	background-position: center;
-	background-repeat: no-repeat;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-} */
 
 .button-grid {
 	position: absolute;
@@ -91,7 +158,7 @@ h2 {
 
 .vending-button {
 	z-index: 100;
-	background: #232323;
+	background: var(--background-color);
 	transition: all 0.3 ease;
 	height: 7px;
 	width: 18px;
@@ -111,22 +178,24 @@ h2 {
 	z-index: 200;
 }
 
+.modal.active {
+	display: flex;
+}
+
 .modal-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	position: relative;
-	
-	font-family:'MadouFuto';
+	font-family: var(--primary-font);
 	position: relative;
-	background-color: rgba(0, 0, 0, 0.9);
-	color: #fff;
+	background-color: var(--modal-background);
+	color: var(--text-color);
 	margin: 5% auto;
 	padding: 50px;
 	width: 75%;
 	height: 67%;
 	overflow-y: auto;
-	/* border-radius: 12px; */
 	padding: 35;
 	font-size: 15px;
 	animation: dropin 0.5s ease-in-out;
@@ -136,6 +205,19 @@ h2 {
 	width: 45%;
 }
 
+.modal-body audio::-webkit-media-controls-panel {
+	background-color: var(--red-color);
+}
+
+.modal-content::-webkit-scrollbar {
+	width: 6px;
+	background-color: var(--text-color);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+	background-color: var(--red-color);
+}
+
 .close-button {
 	position: absolute;
 	top: 10px;
@@ -143,17 +225,17 @@ h2 {
 	font-size: 24px;
 	background: none;
 	border: none;
-	color: #fff;
+	color: var(--text-color);
 }
 
 .modal-body h3 {
-	font-family:'MadouFuto';
+	font-family: var(--primary-font);
 	font-size: 25px;
 	margin-bottom: 20px;
 }
 
 .modal-body p {
-	font-family:'MadouFuto';
+	font-family: var(--primary-font);
 	font-size: 15px;
 	margin-top: 30px;
 	line-height: 1.25;
@@ -171,33 +253,7 @@ h2 {
 	margin: 20px 0;
 }
 
-.modal-body audio::-webkit-media-controls-panel {
-	background-color: #ff0000;
-}
-
-.modal.active {
-	display: flex;
-}
-
-.modal-content::-webkit-scrollbar {
-	width: 6px;
-	background-color: #fff;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-	background-color: #ff0000;
-}
-
 #channel-blocks {
-	display: none;
-}
-
-h3 {
-	font-size: 30px;
-	font-family:'Teko';
-}
-
-.hidden {
 	display: none;
 }
 
@@ -205,9 +261,9 @@ h3 {
 /* animation */
 
 @keyframes blink {
-	0% { background: #232323;}
-	50% { background-color: #ff0000;}
-	100% {background-color: #232323;}
+	0% { background: var(--background-color);}
+	50% { background-color: var(--red-color);}
+	100% {background-color: var(--background-color);}
 }
 
 .vending-button:nth-child(1) { animation-delay: 0s;}
@@ -246,7 +302,6 @@ h3 {
 
 
 /* animation-drop */
-
 @keyframes dropin {
 	0% {
 		transform: translateY(-100vh) rotate(5deg);
@@ -275,63 +330,6 @@ h3 {
 }
 
 
-.title-section {
-	width: 100%;
-	padding: 0 20px;
-	position: relative;
-	z-index: 20;
-	margin-top: 45px;
-	box-sizing: border-box;
-	text-align: center;
-}
-
-.title-stack {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 0;
-}
-
-#channel-title { 
-	font-size: 45px;
-	font-family: 'MadouFuto';
-	text-transform: uppercase;
-	max-width: 100%;
-	margin: 0 auto;
-	/* margin-top: 150px; */
-	/* margin-left: 20px; */
-	color: #fff;
-}
-
-#channel-title2 {
-	font-size: 38px;
-	font-family: 'BestTen';
-	color: #fff;
-	text-align: center;
-	max-width: 100%;
-	margin: 0 auto;
-	margin-top: 10px;
-}
-
-#channel-title3 {
-	font-size: 20px;
-	font-family: 'BestTen';
-	color: #fff;
-	text-align: right;
-	max-width: 100%;
-	margin: 0 auto;
-	margin-top: 20px;
-	margin-right: 24px;
-	margin-bottom: 30px;
-}
-
-#channel-link {
-	font-size: 30px;
-	font-family: 'MadouFuto';
-	text-transform: uppercase;
-}
-
 
 /* Media Queries */
 /* Desktop Media Query */
@@ -340,46 +338,36 @@ h3 {
 	body {
 		overflow: hidden;
 	}
-
-	/* .background-image {
-		position: absolute;
-		background-image: url('../assets/vending-machine.svg');
-		background-size: 40%;
-		background-position: right 5% top -20%;
-		background-repeat: no-repeat;
-		height: 100vh;
-	} */
 	
 	h2 {
 		display: none;
 	}
 
+	h3 {
+		font-size: 30px;
+		font-family: var(--secondary-font);
+	}
+
 	.page-container {
 		display: grid;
 		grid-template-columns: 55% 45%;
-		/* flex-direction: row-reverse; */
 		align-items: center;
-		/* height: 100vh; */
 	}
 
 	.title-section {
 		grid-column: 1;
 		width: 100%;
-		/* padding-left: 10%; */
 		text-align: left;
 		transform: translate(0, -70%);
-		/* margin-top: 20vh; */
 		position: relative;
 		z-index: 20;
 	}
 
 	.machine-container {
 		grid-column: 2;
-		/* margin-top: -20%; */
 		background-size: contain;
 		background-position: right center;
 		height: 110vh;
-		/* float: right; */
 		width: 100%;
 		aspect-ratio: auto;
 		padding-bottom: 0;
@@ -406,11 +394,6 @@ h3 {
 	}
 	
 	.modal {
-		font-family:'MadouFuto';
-		display: none;
-		position: fixed;
-		top: 0;
-		left: 0;
 		width: 70%;
 		height: 65%;
 		z-index: 200;
@@ -430,15 +413,6 @@ h3 {
 	}
 	
 	.modal-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		font-family:'MadouFuto';
-		position: relative;
-		background-color: rgba(0, 0, 0, 0.9);
-		color: #fff;
-		/* margin: 5% auto; */
-		/* padding: 50px; */
 		width: 60%;
 		height: 130%;
 		overflow-y: auto;
@@ -456,14 +430,12 @@ h3 {
 	}
 	
 	.modal-body h3 {
-		font-family:'MadouFuto';
 		font-size: 35px;
 		margin-bottom: 20px;
 		text-align: center;
 	}
 	
 	.modal-body p {
-		font-family:'MadouFuto';
 		font-size: 18px;
 		margin-top: 30px;
 		line-height: 1.25;
@@ -481,45 +453,27 @@ h3 {
 		height: 300px;
 		margin: 0 auto;
 	}
-
-	.modal-content::-webkit-scrollbar {
-		width: 6px;
-		background-color: #fff;
-	}
-
-	.modal-content::-webkit-scrollbar-thumb {
-		background-color: #ff0000;
-	}
 	
 	#channel-blocks {
 		display: none;
 	}
-	
-	h3 {
-		font-size: 30px;
-		font-family:'Teko';
-	}
 
 	#channel-title { 
 		font-size: 160px;
-		font-family: 'HomeVideo';
+		font-family: var(--title-font);
 		margin-left: 10px;
-		color: #fff;
-		/* word-break: break-word; */
-		/* overflow-wrap: break-word; */
 		text-transform: uppercase;
-		-webkit-text-stroke: 2px #232323;
+		-webkit-text-stroke: 2px var(--background-color);
 		text-align: left;
 	}
 
 	#channel-title2 { 
 		font-size: 80px;
-		font-family: 'BestTen';
 		margin-left: 20px;
 		margin-top: 30px;
 		align-items: end;
 		color: #fff;
-		-webkit-text-stroke: 0.5px #232323;
+		-webkit-text-stroke: 0.5px var(--background-color);
 		text-align: left;
 		white-space: nowrap;
 		overflow: visible;
@@ -527,13 +481,9 @@ h3 {
 
 	#channel-title3 {
 		font-size: 50px;
-		font-family: 'BestTen';
-		color: #fff;
-		/* text-align: right; */
 		max-width: 100%;
 		margin-top: 80px;
 		margin-left: -95px;
-		/* margin-right: 24px; */
 		margin-bottom: 30px;
 		position: relative;
 	}
@@ -544,8 +494,6 @@ h3 {
 	
 	#channel-link {
 		font-size: 30px;
-		font-family: 'MadouFuto';
-		text-transform: uppercase;
 		text-align: left;
 	}
 
@@ -560,7 +508,6 @@ h3 {
 }
 
 /* vending machine buttons */
-
 @media (max-width: 375px) {
 	.button-grid {
 		top: 16.5%;
