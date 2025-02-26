@@ -355,6 +355,7 @@
 				buttonContainer.style.left = '40px'
 			} else {
 				buttonContainer.style.bottom = '20px'
+				buttonContainer.style.right = '40px'
 			}
 		}
 
