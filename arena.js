@@ -353,7 +353,7 @@
 		lunchButton.textContent = 'Lunch';
 		lunchButton.style.padding = '8px 15px';
 		lunchButton.style.backgroundColor = '#EB9B2D';
-		lunchButton.style.color = '#fff';
+		lunchButton.style.color = '#ffffff';
 		lunchButton.style.border = 'none';
 		lunchButton.style.fontFamily = 'MadouFuto';
 
@@ -375,7 +375,7 @@
 			changeTextColor('#232323');
 
 			lunchButton.style.backgroundColor = '#EB9B2D';
-			lunchButton.style.color = '#fff';
+			lunchButton.style.color = '#ffffff';
 
 			dinnerButton.style.backgroundColor = '#232323';
 			dinnerButton.style.color = '#ccc';
