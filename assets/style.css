@@ -104,6 +104,11 @@ body {
 }
 
 .modal-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	
 	font-family:'MadouFuto';
 	position: relative;
 	background-color: rgba(0, 0, 0, 0.9);
@@ -111,7 +116,7 @@ body {
 	margin: 5% auto;
 	padding: 50px;
 	width: 75%;
-	height: 85%;
+	height: 67%;
 	overflow-y: auto;
 	/* border-radius: 12px; */
 	padding: 35;
@@ -124,10 +129,9 @@ body {
 }
 
 .close-button {
-	position: sticky;
-	float: right;
-	top: -5px;
-	right: -10px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 	font-size: 24px;
 	cursor: pointer;
 	background: none;
@@ -207,22 +211,31 @@ h3 {
 .vending-button:nth-child(6) { animation-delay: 2.5s;}
 .vending-button:nth-child(7) { animation-delay: 3s;}
 .vending-button:nth-child(8) { animation-delay: 3.5s;}
-.vending-button:nth-child(9) { animation-delay: 0.5s;}
-.vending-button:nth-child(10) { animation-delay: 1s;}
-.vending-button:nth-child(11) { animation-delay: 1.5s;}
-.vending-button:nth-child(12) { animation-delay: 2s;}
-.vending-button:nth-child(13) { animation-delay: 2.5s;}
-.vending-button:nth-child(14) { animation-delay: 3s;}
-.vending-button:nth-child(15) { animation-delay: 3.5s;}
-.vending-button:nth-child(16) { animation-delay: 4s;}
-.vending-button:nth-child(17) { animation-delay: 1.5s;}
-.vending-button:nth-child(18) { animation-delay: 2s;}
-.vending-button:nth-child(19) { animation-delay: 2.5s;}
-.vending-button:nth-child(20) { animation-delay: 3s;}
-.vending-button:nth-child(21) { animation-delay: 3.5s;}
-.vending-button:nth-child(22) { animation-delay: 4s;}
-.vending-button:nth-child(23) { animation-delay: 4.5s;}
-.vending-button:nth-child(24) { animation-delay: 5s;}
+.vending-button:nth-child(9) { animation-delay: 4s;}
+.vending-button:nth-child(10) { animation-delay: 4.5s;}
+.vending-button:nth-child(11) { animation-delay: 5s;}
+.vending-button:nth-child(12) { animation-delay: 0s;}
+.vending-button:nth-child(13) { animation-delay: 0.5s;}
+.vending-button:nth-child(14) { animation-delay: 1s;}
+.vending-button:nth-child(15) { animation-delay: 1.5s;}
+.vending-button:nth-child(16) { animation-delay: 2s;}
+.vending-button:nth-child(17) { animation-delay: 2.5s;}
+.vending-button:nth-child(18) { animation-delay: 3s;}
+.vending-button:nth-child(19) { animation-delay: 3.5s;}
+.vending-button:nth-child(20) { animation-delay: 4s;}
+.vending-button:nth-child(21) { animation-delay: 4.5s;}
+.vending-button:nth-child(22) { animation-delay: 5s;}
+.vending-button:nth-child(23) { animation-delay: 0s;}
+.vending-button:nth-child(24) { animation-delay: 0.5s;}
+.vending-button:nth-child(25) { animation-delay: 1s;}
+.vending-button:nth-child(26) { animation-delay: 1.5s;}
+.vending-button:nth-child(27) { animation-delay: 2s;}
+.vending-button:nth-child(28) { animation-delay: 2.5s;}
+.vending-button:nth-child(29) { animation-delay: 3s;}
+.vending-button:nth-child(30) { animation-delay: 3.5s;}
+.vending-button:nth-child(31) { animation-delay: 4s;}
+.vending-button:nth-child(32) { animation-delay: 4.5s;}
+.vending-button:nth-child(33) { animation-delay: 5s;}
 
 
 /* animation-drop */
@@ -386,6 +399,9 @@ h3 {
 	}
 	
 	.modal-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		font-family:'MadouFuto';
 		position: relative;
 		background-color: rgba(0, 0, 0, 0.9);
@@ -397,12 +413,11 @@ h3 {
 		overflow-y: auto;
 		padding: 30;
 		font-size: 15px;
+		margin-left: 150px;
+		margin-top: 40px;
 	}
 	
 	.close-button {
-		position: sticky;
-		top: -5px;
-		right: -10px;
 		font-size: 24px;
 		cursor: pointer;
 		background: none;
@@ -433,7 +448,7 @@ h3 {
 
 	.modal-body iframe {
 		width: 100%;
-		height: 320px;
+		height: 300px;
 		margin: 0 auto;
 	}
 
