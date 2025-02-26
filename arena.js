@@ -191,6 +191,7 @@
 				<h3>${ block.title || 'Link'}</h3>
 				<img src="${ block.image.original.url }" style="max-width: 100%; height: auto;">
 				${block.description_html || ''}
+				<p><a href="${ block.source.url }">The Link ↗️</a></p>
 			`;
 		
 	}
@@ -278,7 +279,7 @@
 					${ block.embed.html }
 					${hasDescription ?
 						`<div class="block-description">${description}</div>`:
-						'<div class="no-description">no video description</div>'}
+						'<div class="no-description"></div>'}
 				`;
 			// channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
@@ -371,3 +372,6 @@
 // 	window.addEventListener('resize', function(){
 // 		adjustButtonPositions();
 // 	})
+
+
+
