@@ -338,40 +338,87 @@
 		renderUser(data.user, channelUsers)
 	})
 
-// // control the vending machine button postion
-// 	function adjustButtonPositions() {
-// 		const buttonGrid = document.getElementById('buttonGrid');
-// 		const windowWidth = window.innerWidth;
+		// change bg color
+		// create button
+		const buttonContainer = document.createElement('div');
+		buttonContainer.style.position = 'fixed';
+		buttonContainer.style.bottom = '20px';
+		buttonContainer.style.right = '20px';
+		buttonContainer.style.display = 'flex';
+		buttonContainer.style.gap = '10px';
+		buttonContainer.style.zIndex = '1000';
 
-// 		if (windowWidth < 768) {
-// 			// mobile
-// 			buttonGrid.style.top = '30%';
-// 			buttonGrid.style.left = '16%';
-// 			buttonGrid.style.width = '20%';
-// 			buttonGrid.style.rowGap = '350%';
-// 			buttonGrid.style.columnGap = '6%';
-// 		} else if (windowWidth >= 768 && windowWidth < 1200) {
-// 			// tablet
-// 			buttonGrid.style.top = '34.5%';
-// 			buttonGrid.style.left = '30%';
-// 			buttonGrid.style.width = '20%';
-// 		} else {
-// 			// desktop
-// 			buttonGrid.style.top = '28.5%';
-// 			buttonGrid.style.left = '58.5%';
-// 			buttonGrid.style.width = '8%';
-// 			buttonGrid.style.rowGap = '355%';
-// 			buttonGrid.style.columnGap = '6%';
-// 		}
-// 	}
+		// lunch-orange
+		const lunchButton = document.createElement('button');
+		lunchButton.textContent = 'Lunch';
+		lunchButton.style.padding = '8px 15px';
+		lunchButton.style.backgroundColor = '#EB9B2D';
+		lunchButton.style.color = '#fff';
+		lunchButton.style.border = 'none';
+		lunchButton.style.fontFamily = 'MadouFuto';
 
-// 	document.addEventListener('DOMContentLoaded', function() {
-// 		adjustButtonPositions();
-// 	});
+		// dinner-black
+		const dinnerButton = document.createElement('button');
+		dinnerButton.textContent = 'Dinner';
+		dinnerButton.style.padding = '8px 15px';
+		dinnerButton.style.backgroundColor = '#232323';
+		dinnerButton.style.color = '#fff';
+		dinnerButton.style.border = '1px solid #fff';
+		dinnerButton.style.border = 'none';
+		dinnerButton.style.fontFamily = 'MadouFuto';
 
-// 	window.addEventListener('resize', function(){
-// 		adjustButtonPositions();
-// 	})
+		buttonContainer.appendChild(lunchButton);
+		buttonContainer.appendChild(dinnerButton);
+
+		lunchButton.addEventListener('click', function() {
+			document.body.style.backgroundColor = '#EB9B2D';
+			changeTextColor('#232323');
+
+			lunchButton.style.backgroundColor = '#EB9B2D';
+			lunchButton.style.color = '#fff';
+
+			dinnerButton.style.backgroundColor = '#232323';
+			dinnerButton.style.color = '#ccc';
+		});
+
+		dinnerButton.addEventListener('click', function() {
+			document.body.style.backgroundColor = '#232323';
+			changeTextColor('#fff');
+
+			dinnerButton.style.backgroundColor = '#232323';
+			dinnerButton.style.color = '#fff';
+			dinnerButton.style.border = '1px solid #fff';
+			
+			lunchButton.style.backgroundColor = '#444';
+			lunchButton.style.color = '#ccc';
+
+		});
+
+		function changeTextColor(color) {
+			const textElements = document.querySelectorAll('a, #channel-title, #channel-title2, #channel-title3')
+
+			textElements.forEach(element => {
+				element.style.color = color;
+			});
+
+			const titles = document.querySelectorAll('#channel-title, #channel-title2');
+			titles.forEach(title => {
+				if (color === '#232323') {
+					title.style.webkitTextStroke = '0.5px #232323';
+				} else {
+					title.style.webkitTextStroke = '0.5px #232323'
+				}
+				});
+			}
+
+		document.addEventListener('DOMContentLoaded', function() {
+			document.body.appendChild(buttonContainer);
+			dinnerButton.click();
+		}
+	)
+
+
+
 
 
 
