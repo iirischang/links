@@ -333,6 +333,69 @@ h3 {
 	animation: dropin 1.5s ease-out forwards;
 }
 
+.info-title {
+	color: var(--red-color);
+	font-size: 25px;
+	margin-top: 10px;
+}
+
+.info-content {
+	font-size: 15px;
+	padding-top: 10px;
+	line-height: 1.3;
+}
+
+.info-button {
+	font-family: var(--primary-font);
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	font-size: 20px;
+	color: var(--red-color);
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	z-index: 300;
+}
+
+.info-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	justify-content: center;
+	align-items: center;
+	z-index: 400;
+	padding: 30px;
+}
+
+.info-modal.active {
+	display: flex;
+}
+
+.info-modal-content {
+	font-family: var(--primary-font);
+	background-color: var(--modal-background);
+	color: var(--text-color);
+	padding: 30px;
+	width: 80%;
+	max-width: 300px;
+	text-align: center;
+}
+
+.close-info {
+	position: absolute;
+	top: 185px;
+	right: 75px;
+	background: none;
+	border: none;
+	color: var(--text-color);
+	font-size: 20px;
+	cursor: pointer;
+}
 
 
 /* Media Queries */
@@ -379,6 +442,8 @@ h3 {
 		transform: translate(-15%, 10%);
 	}
 	
+
+
 	.button-grid {
 		top: 16.4%;
 		left: 16.5%;
@@ -386,12 +451,15 @@ h3 {
 		row-gap: 345%;
 		column-gap: 4%;
 	}
+
+
 	
 	.vending-button {
 		min-height: 10px;
 		min-width: 33px;
 		z-index: 100;
 	}
+
 
 	.vending-button:hover {
 		cursor: url('../assets/cursor.cur'), pointer;
@@ -507,6 +575,63 @@ h3 {
 		text-align: left;
 		z-index: 2;
 		width: 50%;
+	}
+
+	.info-title {
+		font-size: 35px;
+		margin-top: 10px;
+	}
+	
+	.info-content {
+		font-size: 25px;
+		padding-top: 40px;
+		line-height: 1.3;
+	}
+	
+	.info-button {
+		top: 10px;
+		right: 10px;
+		font-size: 40px;
+		padding: 10px;
+		cursor: pointer;
+		z-index: 300;
+	}
+	
+	.info-modal {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		justify-content: center;
+		align-items: center;
+		z-index: 400;
+		padding: 100px;
+	}
+	
+	.info-modal.active {
+		display: flex;
+	}
+	
+	.info-modal-content {
+		font-family: var(--primary-font);
+		background-color: var(--modal-background);
+		color: var(--text-color);
+		padding: 30px;
+		text-align: center;
+	}
+	
+	.close-info {
+		position: absolute;
+		top: 130px;
+		right: 585px;
+		background: none;
+		border: none;
+		color: var(--text-color);
+		font-size: 20px;
+		cursor: pointer;
 	}
 
 }

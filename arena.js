@@ -432,8 +432,22 @@
 		}
 	)
 
+	
+// info
 
+		document.getElementById("infoButton").addEventListener("click", function() {
+		document.getElementById("infoModal").classList.add("active");
+		});
 
+		document.querySelector(".close-info").addEventListener("click", function() {
+		document.getElementById("infoModal").classList.remove("active");
+		});
+
+		document.addEventListener("click", function(event) {
+		if (event.target === document.getElementById("infoModal")) {
+			document.getElementById("infoModal").classList.remove("active");
+		}
+		});
 
 
 
