@@ -433,7 +433,7 @@
 	)
 
 	
-// info
+		// info
 
 		document.getElementById("infoButton").addEventListener("click", function() {
 		document.getElementById("infoModal").classList.add("active");
