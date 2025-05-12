@@ -261,6 +261,27 @@ h3 {
 	display: none;
 }
 
+.colorchange .page-container, 
+.colorchange .button-grid, 
+.colorchange .title-section, 
+.colorchange .info-button {
+	filter: grayscale(100%);
+	opacity: 0.4;
+	pointer-events: none;
+}
+
+.colorchange .modal, 
+.colorchange .modal *, 
+.colorchange .close-button, 
+.colorchange .info-modal, 
+.colorchange .info-modal *, 
+.colorchange .info-button {
+	filter: none;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+
 
 /* animation */
 

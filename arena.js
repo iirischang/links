@@ -1,3 +1,11 @@
+	function dimBackground() {
+		document.body.classList.add('colorchange');
+	}
+
+	function resetBackground() {
+		document.body.classList.remove('colorchange');
+	}
+	
 	// This allows us to process/render the descriptions, which are in Markdown!
 	// More about Markdown: https://en.wikipedia.org/wiki/Markdown
 	let markdownIt = document.createElement('script')
@@ -93,6 +101,9 @@
 			button.innerHTML = "";
 			button.addEventListener('click', () => showModal(block));
 			buttonGrid.appendChild(button);
+			button.addEventListener('click', () => {
+				dimBackground();
+			});
 		});
 
 		for (let i = imageBlocks.length; i < maxPerRow; i++) {
@@ -167,6 +178,7 @@
 		let content = renderBlock(block);
 		modalBody.innerHTML = content;
 		modal.classList.add('active');
+		dimBackground();
 
 	}
 
@@ -297,6 +309,7 @@
 
 	document.querySelector('.close-button').addEventListener('click', () => {
 		document.getElementById('itemModal').classList.remove('active');
+		resetBackground();
 	});
 
 	// It‘s always good to credit your work:
@@ -446,8 +459,15 @@
 		document.addEventListener("click", function(event) {
 		if (event.target === document.getElementById("infoModal")) {
 			document.getElementById("infoModal").classList.remove("active");
+			resetBackground();
 		}
 		});
 
+
+	
+		
+
+		
+		
 
 
